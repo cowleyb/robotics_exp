@@ -155,7 +155,7 @@
     <axis xyz="-2.2787E-05 1 1.9439E-05"/>
   </joint>
 
-  <link name="depth_cam">
+  <link name="camera_link">
     <inertial>
       <origin rpy="0 0 0" xyz="0.0023402290651429 0.00113784597946548 -0.0102127064032341"/>
       <mass value="0.0270474748429678"/>
@@ -180,7 +180,7 @@
   <joint name="cam_Joint" type="fixed">
     <origin rpy="0 0 0" xyz="0.064015 -0.00013463 0.051155"/>
     <parent link="base_link"/>
-    <child link="depth_cam"/>
+    <child link="camera_link"/>
     <axis xyz="0 0 0"/>
   </joint>
 
@@ -214,4 +214,3 @@
   </joint>
   <xacro:include filename="$(find mentorpi_description)/urdf/imu.urdf.xacro"/>
 </robot>
-
