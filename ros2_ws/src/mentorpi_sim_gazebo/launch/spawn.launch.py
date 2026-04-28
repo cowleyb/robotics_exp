@@ -54,5 +54,13 @@ def generate_launch_description():
                 ],
                 output="screen",
             ),
+            Node(
+                package="ros_gz_bridge",
+                executable="parameter_bridge",
+                arguments=[
+                    "/scan_raw@sensor_msgs/msg/LaserScan[gz.msgs.LaserScan",
+                ],
+                output="screen",
+            ),
         ]
     )
