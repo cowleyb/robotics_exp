@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot name="rosmentor" xmlns:xacro="http://ros.org/wiki/xacro">
+    <xacro:include filename="$(find mentorpi_description)/urdf/ack.xacro"/>
+</robot>
