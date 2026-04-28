@@ -30,4 +30,26 @@
       <visualize>true</visualize>
     </sensor>
   </gazebo>
+
+  <gazebo reference="camera_link">
+    <sensor name="rgb_camera" type="camera">
+      <topic>/ascamera/camera_publisher/rgb0/image</topic>
+      <camera_info_topic>/ascamera/camera_publisher/rgb0/camera_info</camera_info_topic>
+      <update_rate>15</update_rate>
+      <camera>
+        <horizontal_fov>1.047</horizontal_fov>
+        <image>
+          <width>640</width>
+          <height>480</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.05</near>
+          <far>20.0</far>
+        </clip>
+      </camera>
+      <always_on>true</always_on>
+      <visualize>true</visualize>
+    </sensor>
+  </gazebo>
 </robot>

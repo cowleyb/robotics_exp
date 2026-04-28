@@ -59,6 +59,8 @@ def generate_launch_description():
                 executable="parameter_bridge",
                 arguments=[
                     "/scan_raw@sensor_msgs/msg/LaserScan[gz.msgs.LaserScan",
+                    "/ascamera/camera_publisher/rgb0/image@sensor_msgs/msg/Image[gz.msgs.Image",
+                    "/ascamera/camera_publisher/rgb0/camera_info@sensor_msgs/msg/CameraInfo[gz.msgs.CameraInfo",
                 ],
                 output="screen",
             ),
