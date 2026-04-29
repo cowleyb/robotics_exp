@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <robot name="mentorpi_gz" xmlns:xacro="http://ros.org/wiki/xacro">
-  <xacro:include filename="$(find mentorpi_description)/urdf/mentorpi.xacro"/>
+  <xacro:include filename="$(find mentorpi_sim_gazebo)/urdf/mentorpi_a1_model.xacro"/>
 
   <gazebo reference="lidar_frame">
     <sensor name="scan_raw" type="gpu_lidar">
       <topic>/scan_raw</topic>
       <update_rate>10</update_rate>
-      <ray>
+      <lidar>
         <scan>
           <horizontal>
             <samples>720</samples>
@@ -23,9 +23,9 @@
         <noise>
           <type>gaussian</type>
           <mean>0.0</mean>
-          <stddev>0.01</stddev>
-        </noise>
-      </ray>
+            <stddev>0.01</stddev>
+          </noise>
+      </lidar>
       <always_on>true</always_on>
       <visualize>true</visualize>
     </sensor>

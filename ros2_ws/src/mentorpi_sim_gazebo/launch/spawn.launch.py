@@ -15,6 +15,7 @@ def generate_launch_description():
 
     xacro_path = os.path.join(sim_path, "urdf", "mentorpi_gz.xacro")
     world_path = os.path.join(sim_path, "worlds", "empty.world")
+    bridge_config_path = os.path.join(sim_path, "config", "ros_gz_bridge.yaml")
 
     robot_description = Command(["xacro ", xacro_path])
 
@@ -50,18 +51,14 @@ def generate_launch_description():
                     "-y",
                     "0.0",
                     "-z",
-                    "0.0",
+                    "0.05",
                 ],
                 output="screen",
             ),
             Node(
                 package="ros_gz_bridge",
                 executable="parameter_bridge",
-                arguments=[
-                    "/scan_raw@sensor_msgs/msg/LaserScan[gz.msgs.LaserScan",
-                    "/ascamera/camera_publisher/rgb0/image@sensor_msgs/msg/Image[gz.msgs.Image",
-                    "/ascamera/camera_publisher/rgb0/camera_info@sensor_msgs/msg/CameraInfo[gz.msgs.CameraInfo",
-                ],
+                parameters=[{"config_file": bridge_config_path}],
                 output="screen",
             ),
         ]
