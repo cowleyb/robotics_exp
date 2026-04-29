@@ -36,7 +36,12 @@ def generate_launch_description():
                 executable="robot_state_publisher",
                 name="robot_state_publisher",
                 output="screen",
-                parameters=[{"robot_description": robot_description}],
+                parameters=[
+                    {
+                        "robot_description": robot_description,
+                        "use_sim_time": True,
+                    }
+                ],
             ),
             Node(
                 package="ros_gz_sim",

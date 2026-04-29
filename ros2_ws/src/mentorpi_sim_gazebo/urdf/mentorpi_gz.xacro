@@ -5,6 +5,7 @@
   <gazebo reference="lidar_frame">
     <sensor name="scan_raw" type="gpu_lidar">
       <topic>/scan_raw</topic>
+      <gz_frame_id>lidar_frame</gz_frame_id>
       <update_rate>10</update_rate>
       <lidar>
         <scan>
@@ -34,6 +35,7 @@
   <gazebo reference="camera_link">
     <sensor name="rgb_camera" type="camera">
       <topic>/ascamera/camera_publisher/rgb0/image</topic>
+      <gz_frame_id>camera_link</gz_frame_id>
       <camera_info_topic>/ascamera/camera_publisher/rgb0/camera_info</camera_info_topic>
       <update_rate>15</update_rate>
       <camera>
